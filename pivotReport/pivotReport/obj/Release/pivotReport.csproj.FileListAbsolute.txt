@@ -1,0 +1,14 @@
+D:\cshop\pivotReport\pivotReport\bin\Release\pivotReport.exe.config
+D:\cshop\pivotReport\pivotReport\bin\Release\pivotReport.exe
+D:\cshop\pivotReport\pivotReport\bin\Release\pivotReport.pdb
+D:\cshop\pivotReport\pivotReport\bin\Release\Newtonsoft.Json.dll
+D:\cshop\pivotReport\pivotReport\bin\Release\Newtonsoft.Json.xml
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.csproj.ResolveComReference.cache
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.Form1.resources
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.Properties.Resources.resources
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.csproj.GenerateResource.cache
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.csproj.CoreCompileInputs.cache
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.csproj.CopyComplete
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.exe
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.pdb
+D:\cshop\pivotReport\pivotReport\obj\Release\pivotReport.csprojAssemblyReference.cache

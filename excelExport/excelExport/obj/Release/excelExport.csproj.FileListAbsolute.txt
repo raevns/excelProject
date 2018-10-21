@@ -1,0 +1,12 @@
+D:\cshop\excelExport\excelExport\bin\Release\excelExport.exe.config
+D:\cshop\excelExport\excelExport\bin\Release\excelExport.exe
+D:\cshop\excelExport\excelExport\bin\Release\excelExport.pdb
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.csproj.ResolveComReference.cache
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.Form1.resources
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.settingForm.resources
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.Form3.resources
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.Properties.Resources.resources
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.csproj.GenerateResource.cache
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.csproj.CoreCompileInputs.cache
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.exe
+D:\cshop\excelExport\excelExport\obj\Release\excelExport.pdb

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pivotReport", "pivotReport\pivotReport.csproj", "{705BDDB8-76E3-4680-AC36-83B0AC5D79F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "excelExport", "..\excelExport\excelExport\excelExport.csproj", "{6158F287-E6A4-43B0-8783-F461D5080D51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{705BDDB8-76E3-4680-AC36-83B0AC5D79F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{705BDDB8-76E3-4680-AC36-83B0AC5D79F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{705BDDB8-76E3-4680-AC36-83B0AC5D79F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{705BDDB8-76E3-4680-AC36-83B0AC5D79F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6158F287-E6A4-43B0-8783-F461D5080D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6158F287-E6A4-43B0-8783-F461D5080D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6158F287-E6A4-43B0-8783-F461D5080D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6158F287-E6A4-43B0-8783-F461D5080D51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29E6FC6A-2BDA-4159-8025-BE7C9C50998B}
+	EndGlobalSection
+EndGlobal
