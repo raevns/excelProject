@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="combineExport.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="settingText1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A</Value>
+    </Setting>
+    <Setting Name="settingText2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">B</Value>
+    </Setting>
+    <Setting Name="settingText3" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C</Value>
+    </Setting>
+    <Setting Name="settingText4" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E</Value>
+    </Setting>
+    <Setting Name="settingText5" Type="System.String" Scope="User">
+      <Value Profile="(Default)">I</Value>
+    </Setting>
+    <Setting Name="settingText6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">J</Value>
+    </Setting>
+    <Setting Name="settingText7" Type="System.String" Scope="User">
+      <Value Profile="(Default)">K</Value>
+    </Setting>
+    <Setting Name="settingText8" Type="System.String" Scope="User">
+      <Value Profile="(Default)">M</Value>
+    </Setting>
+    <Setting Name="settingText9" Type="System.String" Scope="User">
+      <Value Profile="(Default)">jpg</Value>
+    </Setting>
+    <Setting Name="settingpivotSt" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A6</Value>
+    </Setting>
+    <Setting Name="settingpivotEd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">L526</Value>
+    </Setting>
+    <Setting Name="settingUserId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">test</Value>
+    </Setting>
+    <Setting Name="settingUserPwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1111</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
