@@ -36,9 +36,9 @@ namespace combineExport
             {
                 try
                 {
-                    string result = serverService.connect_server(this.textBox_ID.Text, this.textBox_PWD.Text); //리턴이 안됨..??
+                    //string result = serverService.connect_server(this.textBox_ID.Text, this.textBox_PWD.Text); //리턴이 안됨..??
 
-                    result = "{\"resultCode\":\"AUTHORIZED\""; //임시로 그냥넘김
+                    string result = "{\"resultCode\":\"AUTHORIZED\""; //임시로 그냥넘김
 
                     if (result.Equals("{\"resultCode\":\"AUTHORIZED\""))
                     {
