@@ -119,8 +119,7 @@ namespace combineExport.excel
                     ReleaseExcelObject(rng);
                     ReleaseExcelObject(ws);
                 }
-
-                wb.Close(true, null, null);
+                //wb.Close(true, null, null);
                 ReleaseExcelObject(wb);
 
                 excelApp.DisplayAlerts = false; // 저장할 것인가 확인하지 않도록 설정

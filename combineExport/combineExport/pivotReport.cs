@@ -16,7 +16,9 @@ namespace combineExport
 {
     public partial class pivotReport : Form
     {
-        Dictionary<string, List<readVO>> lists = new Dictionary<string, List<readVO>>();
+        Dictionary<string, List<readPivotVO>> lists = new Dictionary<string, List<readPivotVO>>();
+
+        Dictionary<int, Decimal> gridrank = new Dictionary<int, Decimal>();
 
         String select_price = "";
         DataGridView select_dgw;
@@ -127,9 +129,9 @@ namespace combineExport
             }
         }
 
-        private void addTabGrid(Dictionary<string, List<readVO>> lists)
+        private void addTabGrid(Dictionary<string, List<readPivotVO>> lists)
         {
-            foreach (KeyValuePair<string, List<readVO>> data in lists)
+            foreach (KeyValuePair<string, List<readPivotVO>> data in lists)
             {
                 DataGridView dgw = new DataGridView();
 
@@ -140,7 +142,7 @@ namespace combineExport
                 dgw.Dock = System.Windows.Forms.DockStyle.Fill;
                 dgw.TabIndex = 0;
 
-                List<readVO> insertData = data.Value;
+                List<readPivotVO> insertData = data.Value;
                 dgw.DataSource = insertData;
 
                 string title = data.Key.ToString();
@@ -159,6 +161,7 @@ namespace combineExport
                 dgw.Columns.Add("price", "단가금액");
                 dgw.Columns.Add("price", "최종단가");
                 dgw.Columns.Add("sum", "합계");
+                dgw.Columns.Add("rank", "우선순위");
 
                 dgw.CellStateChanged += grid_CellStateChanged;
                 dgw.Rows[0].Cells[0].Selected = false;
@@ -226,7 +229,27 @@ namespace combineExport
                 select_dgw.Rows[check_e.Cell.RowIndex].Cells[check_e.Cell.ColumnIndex + 1].Value = data[1];
                 select_dgw.Rows[check_e.Cell.RowIndex].Cells[check_e.Cell.ColumnIndex + 2].Value = prices;
                 select_dgw.Rows[check_e.Cell.RowIndex].Cells[check_e.Cell.ColumnIndex + 3].Value = prices;
-                select_dgw.Rows[check_e.Cell.RowIndex].Cells[check_e.Cell.ColumnIndex + 4].Value = Decimal.Round(Decimal.Multiply(Convert.ToDecimal(prices), Convert.ToDecimal(select_dgw.Rows[check_e.Cell.RowIndex].Cells[5].Value.ToString())), 2);
+                Decimal result_value = Decimal.Round(Decimal.Multiply(Convert.ToDecimal(prices), Convert.ToDecimal(select_dgw.Rows[check_e.Cell.RowIndex].Cells[5].Value.ToString())), 2);
+                select_dgw.Rows[check_e.Cell.RowIndex].Cells[check_e.Cell.ColumnIndex + 4].Value = result_value;
+
+                if (!gridrank.ContainsKey(check_e.Cell.RowIndex))
+                {
+                    gridrank.Add(check_e.Cell.RowIndex, result_value);
+                }
+
+                var data_link = gridrank.OrderByDescending(num => num.Value);
+                if(data_link.Count() >= 5)
+                {
+                    select_dgw.Rows[data_link.Last().Key].Cells[check_e.Cell.ColumnIndex + 5].Value = string.Empty;
+                    gridrank.Remove(data_link.Last().Key); 
+                    data_link = gridrank.OrderByDescending(num => num.Value);
+                }
+                int ranks = 1;
+                foreach (KeyValuePair<int, Decimal> items in data_link)
+                {
+                    select_dgw.Rows[items.Key].Cells[check_e.Cell.ColumnIndex + 5].Value = ranks;
+                    ranks += 1;
+                }
             }
         }
         private void pivotReport_Load(object sender, EventArgs e)

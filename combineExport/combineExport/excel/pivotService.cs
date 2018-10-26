@@ -52,9 +52,9 @@ namespace combineExport.excel
             return result;
         }
 
-        public static Dictionary<string, List<readVO>> ReadExcelData(string fileroot)
+        public static Dictionary<string, List<readPivotVO>> ReadExcelData(string fileroot)
         {
-            Dictionary<string, List<readVO>> lists = new Dictionary<string, List<readVO>>();
+            Dictionary<string, List<readPivotVO>> lists = new Dictionary<string, List<readPivotVO>>();
 
             Excel.Application xlApp = null;
             Excel.Workbook xlWorkBook = null;
@@ -73,7 +73,7 @@ namespace combineExport.excel
                     {
                         Excel.Range rng = xlWorkSheet.UsedRange;
                         object[,] data = rng.Value;
-                        List<readVO> datas = new List<readVO>();
+                        List<readPivotVO> datas = new List<readPivotVO>();
                         string category = "", sub_position = "", content = "", ea = "";
 
                         for (int r = 1; r <= data.GetLength(0); r++)
@@ -84,7 +84,7 @@ namespace combineExport.excel
                                 {
                                     if (!data[r, 1].ToString().Equals("총합계"))
                                     {
-                                        readVO vo = new readVO();
+                                        readPivotVO vo = new readPivotVO();
                                         vo.category = data[r, 1] == null ? category : data[r, 1].ToString();
                                         vo.sub_position = data[r, 2] == null ? sub_position : data[r, 2].ToString();
                                         vo.content = data[r, 3] == null ? content : data[r, 3].ToString();
@@ -100,7 +100,7 @@ namespace combineExport.excel
                                 }
                                 else
                                 {
-                                    readVO vo = new readVO();
+                                    readPivotVO vo = new readPivotVO();
                                     vo.category = data[r, 1] == null ? category : data[r, 1].ToString();
                                     vo.sub_position = data[r, 2] == null ? sub_position : data[r, 2].ToString();
                                     vo.content = data[r, 3] == null ? content : data[r, 3].ToString();
@@ -208,8 +208,8 @@ namespace combineExport.excel
                     objSheet.Cells[1, 8].Value = myDataGridView.Columns[7].HeaderText;
                     objSheet.Cells[1, 9].Value = myDataGridView.Columns[8].HeaderText;
                     objSheet.Cells[1, 10].Value = myDataGridView.Columns[9].HeaderText;
-                    objSheet.Cells[1, 11].Value = myDataGridView.Columns[9].HeaderText;
-
+                    objSheet.Cells[1, 11].Value = myDataGridView.Columns[10].HeaderText;
+                    objSheet.Cells[1, 12].Value = myDataGridView.Columns[11].HeaderText;
                     for (int i = 0; i < myDataGridView.RowCount; i++)
                     {
                         for (int j = 0; j < myDataGridView.ColumnCount; j++)
