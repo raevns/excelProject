@@ -12,14 +12,18 @@ using System.Net.NetworkInformation;
 using Newtonsoft.Json; // install-package Newtonsoft.Json
 using RabbitMQ.Client;
 using EasyNetQ;
+using combineExport.appAuth;
 
 namespace combineExport
 {
     public partial class login : Form
     {
+        AppAuthContext appAuthContext;
+
         public login()
         {
             InitializeComponent();
+            appAuthContext = new AppAuthContext(this);
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -36,27 +40,7 @@ namespace combineExport
             {
                 try
                 {
-                    //string result = serverService.connect_server(this.textBox_ID.Text, this.textBox_PWD.Text); //리턴이 안됨..??
-
-                    string result = "{\"resultCode\":\"AUTHORIZED\""; //임시로 그냥넘김
-
-                    if (result.Equals("{\"resultCode\":\"AUTHORIZED\""))
-                    {
-                        if (checkBox1.Checked)
-                        {
-                            Properties.Settings.Default.settingUserId = this.textBox_ID.Text;
-                            Properties.Settings.Default.settingUserPwd = this.textBox_PWD.Text;
-                            Properties.Settings.Default.Save();
-                        }
-                        this.Hide();
-                        selectReport selReport = new selectReport();
-                        selReport.Show();
-                        selReport.FormClosing += selReport_Closing;
-                    }
-                    else
-                    {
-                        MessageBox.Show("아이디 혹은 비밀번호가 잘못됬습니다.");
-                    }
+                    appAuthContext.authenticate(textBox_ID.Text.ToString(), textBox_PWD.Text.ToString());
                 }
                 catch (Exception ex)
                 {
@@ -97,5 +81,45 @@ namespace combineExport
         {
             this.Show();
         }
+
+        public void setStateMessage(String stateMessage)
+        {
+            
+            MethodInvoker methodInvokerDelegate = delegate ()
+            { this.StateMessageLabel.Text = stateMessage; };
+
+            //This will be true if Current thread is not UI thread.
+            if (this.InvokeRequired)
+                this.Invoke(methodInvokerDelegate);
+            else
+                methodInvokerDelegate();
+                
+        }
+
+        public void onAuthorized()
+        {
+
+            MethodInvoker methodInvokerDelegate = delegate ()
+            {
+                if (checkBox1.Checked)
+                {
+                    Properties.Settings.Default.settingUserId = this.textBox_ID.Text;
+                    Properties.Settings.Default.settingUserPwd = this.textBox_PWD.Text;
+                    Properties.Settings.Default.Save();
+                }
+                this.Hide();
+                selectReport selReport = new selectReport();
+                selReport.Show();
+                selReport.FormClosing += selReport_Closing;
+            };
+
+            //This will be true if Current thread is not UI thread.
+            if (this.InvokeRequired)
+                this.Invoke(methodInvokerDelegate);
+            else
+                methodInvokerDelegate();
+
+        }
+
     }
 }

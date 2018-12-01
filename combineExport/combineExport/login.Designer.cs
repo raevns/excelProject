@@ -35,13 +35,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_PWD = new System.Windows.Forms.TextBox();
             this.textBox_ID = new System.Windows.Forms.TextBox();
+            this.StateMessageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(116, 83);
+            this.button2.Location = new System.Drawing.Point(170, 129);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(86, 29);
             this.button2.TabIndex = 13;
             this.button2.Text = "종료";
             this.button2.UseVisualStyleBackColor = true;
@@ -49,9 +51,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(18, 83);
+            this.button1.Location = new System.Drawing.Point(58, 129);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(86, 29);
             this.button1.TabIndex = 12;
             this.button1.Text = "로그인";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,9 +63,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(32, 62);
+            this.checkBox1.Location = new System.Drawing.Point(74, 103);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(142, 16);
+            this.checkBox1.Size = new System.Drawing.Size(175, 19);
             this.checkBox1.TabIndex = 11;
             this.checkBox1.Text = "아이디/비밀번호 저장";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -70,42 +74,55 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 38);
+            this.label2.Location = new System.Drawing.Point(37, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "비밀번호";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Location = new System.Drawing.Point(50, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "아이디";
             // 
             // textBox_PWD
             // 
-            this.textBox_PWD.Location = new System.Drawing.Point(60, 35);
+            this.textBox_PWD.Location = new System.Drawing.Point(101, 57);
+            this.textBox_PWD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_PWD.Name = "textBox_PWD";
-            this.textBox_PWD.Size = new System.Drawing.Size(139, 21);
+            this.textBox_PWD.Size = new System.Drawing.Size(158, 25);
             this.textBox_PWD.TabIndex = 8;
             this.textBox_PWD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             // 
             // textBox_ID
             // 
-            this.textBox_ID.Location = new System.Drawing.Point(60, 8);
+            this.textBox_ID.Location = new System.Drawing.Point(101, 23);
+            this.textBox_ID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_ID.Name = "textBox_ID";
-            this.textBox_ID.Size = new System.Drawing.Size(139, 21);
+            this.textBox_ID.Size = new System.Drawing.Size(158, 25);
             this.textBox_ID.TabIndex = 7;
             this.textBox_ID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             // 
+            // StateMessageLabel
+            // 
+            this.StateMessageLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.StateMessageLabel.Location = new System.Drawing.Point(0, 174);
+            this.StateMessageLabel.Name = "StateMessageLabel";
+            this.StateMessageLabel.Size = new System.Drawing.Size(330, 38);
+            this.StateMessageLabel.TabIndex = 14;
+            this.StateMessageLabel.Text = "환영합니다.";
+            this.StateMessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 117);
+            this.ClientSize = new System.Drawing.Size(330, 212);
+            this.Controls.Add(this.StateMessageLabel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
@@ -113,6 +130,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_PWD);
             this.Controls.Add(this.textBox_ID);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "login";
             this.Text = "로그인";
             this.Load += new System.EventHandler(this.login_Load);
@@ -131,6 +149,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_PWD;
         private System.Windows.Forms.TextBox textBox_ID;
+        private System.Windows.Forms.Label StateMessageLabel;
     }
 }
 
